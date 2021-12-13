@@ -10,6 +10,8 @@ _LOGGER = logging.getLogger(__name__)
 
 
 class TweetsMetric(Base):
+    """ class for create database
+    """
     __tablename__ = 'tweets_metric'
     __table_args__ = {'extend_existing': True}
 
@@ -20,8 +22,17 @@ class TweetsMetric(Base):
     response_number = Column(Integer)
     video_view_number = Column(Integer)
 
-
     def __init__(self, tweet_id=None, text=None, like_number=None, retweet_number=None, response_number=None, video_view_number=None):
+        """ function constructor TweetsMetric
+
+        Args:
+            tweet_id ([int], optional): [tweet id]. Defaults to None.
+            text ([str], optional): [text of tweet]. Defaults to None.
+            like_number ([int], optional): [like number of tweet]. Defaults to None.
+            retweet_number ([int], optional): [description]. Defaults to None.
+            response_number ([int], optional): [number of response]. Defaults to None.
+            video_view_number ([int], optional): [number of views]. Defaults to None.
+        """
         self.tweet_id = tweet_id
         self.text = text
         self.like_number = like_number
@@ -31,8 +42,18 @@ class TweetsMetric(Base):
 
 
 class TweetsMetricQuerys:
+    """class for create object in Database.
+    """
 
     def create(obj):
+        """class for create Data in Database 
+
+        Args:
+            obj ([objet]): [object of instance class TweetsMetric]
+
+        Raises:
+            Exception: [for catch error]
+        """
         try:
             session.add(obj)
             session.commit()

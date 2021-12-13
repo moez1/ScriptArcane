@@ -19,22 +19,22 @@ APIKEY = "LpTu8eQnEP0WVKbcj2fNa0cbo"
 
 
 log_config = {
-    "version":1,
-    "root":{
-        "handlers" : ["console"],
+    "version": 1,
+    "root": {
+        "handlers": ["console"],
         "level": "DEBUG"
     },
-    "handlers":{
-        "console":{
+    "handlers": {
+        "console": {
             "formatter": "std_out",
             "class": "logging.StreamHandler",
             "level": "DEBUG"
         }
     },
-    "formatters":{
+    "formatters": {
         "std_out": {
             "format": "%(asctime)s : %(levelname)s : %(module)s : %(funcName)s : %(lineno)d : %(message)s",
-            "datefmt":"%d-%m-%Y %I:%M:%S"
+            "datefmt": "%d-%m-%Y %I:%M:%S"
         }
     },
 }
